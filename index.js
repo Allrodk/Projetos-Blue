@@ -13,14 +13,14 @@ Se a pessoa responder positivamente a 2 questões ela deve ser classificada como
 */
 let qtdeSim = 0;
 let respostas = [];
-const perguntas = ['1 - Telefonou para a vítima? Sim(1)ou Não(0)?',
-                   '2 - Esteve no local do crime? Sim(1)ou Não(0)?',
-                   '3 - Mora perto da vítima? Sim(1)ou Não(0)?',
-                   '4 - Devia para a vítima? Sim(1)ou Não(0)?',
-                   '5 - Já trabalhou com a vítima? Sim(1)ou Não(0)?'
+const perguntas = ['1 - Telefonou para a vítima? Sim(1) ou Não(0)?',
+                   '2 - Esteve no local do crime? Sim(1) ou Não(0)?',
+                   '3 - Mora perto da vítima? Sim(1) ou Não(0)?',
+                   '4 - Devia para a vítima? Sim(1) ou Não(0)?',
+                   '5 - Já trabalhou com a vítima? Sim(1) ou Não(0)?'
                   ];
 
-console.log('Atenção! Responda 0 para NÃO ou 1 para SIM:\n');                 
+console.log('Atenção, responda 1 para SIM e 0 para NÃO.\n');                 
 for (let i = 0; i <= perguntas.length-1; i++){  
   respostas[i] = prompt(perguntas[i]);
   if (respostas[i] != 1 && respostas[i] != 0){
@@ -41,5 +41,5 @@ if (qtdeSim == 2){
 }else{
   resultado = 'Inocente';
 }
-console.log(`O interrogado é ${resultado}.`);
+console.log(`\nResultado da investigação: O interrogado é ${resultado}.`);
               
