@@ -1,6 +1,35 @@
 const prompt = require("prompt-sync")({ sigint: true });
 const opcoes = ["Pedra", "", "Tesoura", "", "", "Papel"];
 
+function aleatorio(contador) {
+  let escolha = Math.floor(Math.random() * contador);
+  if (escolha === 0) {
+    return 0;
+  } else if (escolha === 1) {
+    return 2;
+  } else if (escolha === 2) {
+    return 5;
+  }
+}
+
+function jokempo(usuario, computador) {
+  if (usuario === computador) {
+    return "Empatou";
+  } else if (usuario < computador) {
+    if (usuario === 0 && computador === 5) {
+      return 0;
+    } else {
+      return 1;
+    }
+  } else {
+    if (usuario === 5 && computador === 0) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
+
 console.clear();
 let repetir = true;
 while (repetir === true) {
@@ -75,31 +104,3 @@ while (repetir === true) {
   console.clear();
 }
 
-function aleatorio(contador) {
-  let escolha = Math.floor(Math.random() * contador);
-  if (escolha === 0) {
-    return 0;
-  } else if (escolha === 1) {
-    return 2;
-  } else if (escolha === 2) {
-    return 5;
-  }
-}
-
-function jokempo(usuario, computador) {
-  if (usuario === computador) {
-    return "Empatou";
-  } else if (usuario < computador) {
-    if (usuario === 0 && computador === 5) {
-      return 0;
-    } else {
-      return 1;
-    }
-  } else {
-    if (usuario === 5 && computador === 0) {
-      return 1;
-    } else {
-      return 0;
-    }
-  }
-}
