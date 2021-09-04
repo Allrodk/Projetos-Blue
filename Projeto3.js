@@ -22,7 +22,7 @@ let vencedores = [];
 
 let qtdeRodadas;
 for (let i = 0; i < 1; i++) {
-  qtdeRodadas = parseInt(prompt("Deseja jogar quantas rodadas?"));
+  qtdeRodadas = parseInt(prompt("Deseja jogar quantas rodadas? "));
   if (+qtdeRodadas !== parseInt(qtdeRodadas) || qtdeRodadas < 1) {
     i--;
   }
@@ -30,7 +30,7 @@ for (let i = 0; i < 1; i++) {
 
 let qtdeJogadores;
 for (let i = 0; i < 1; i++) {
-  qtdeJogadores = parseInt(prompt("Quantidade de Jogadores: 2, 3, 4 ou 5?"));
+  qtdeJogadores = parseInt(prompt("Quantidade de Jogadores: "));
   if (+qtdeJogadores !== parseInt(qtdeJogadores) || qtdeJogadores < 1) {
     i--;
   }
@@ -109,6 +109,12 @@ for (let h = 0; h < qtdeRodadas; h++) {
     console.log(`${placar[i].nome}:  ${placar[i].numero}`);
   }
 
+  if (h + 1 < qtdeRodadas) {
+    prompt("\nPressione ENTER para próxima Rodada. ");
+  } else {
+    prompt("\nPressione ENTER para ver o placar Geral. ");
+  }
+
   // Limpa a lista de placar a cada rodada
   placar = [];
 }
@@ -130,7 +136,7 @@ for (let i = 0; i < vencedores.length; i++) {
   }
 }
 
-console.log(`\nPlacar Geral:`);
+console.log(`\n\nPlacar Geral:`);
 for (let i in vencedores) {
   console.log(`${vencedores[i].vencedor}:  ${vencedores[i].vitorias} vitórias`);
 }
