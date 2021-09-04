@@ -14,9 +14,9 @@ campeão. (2,0 pontos)*/
 
 const prompt = require("prompt-sync")({ sigint: true });
 
-console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-console.log("$$$$$$$$$ DICE GAME $$$$$$$$$");
-console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+console.log(`#############################`);
+console.log("######### DICE GAME #########");
+console.log("#############################\n");
 let placar = [];
 let vencedores = [];
 
@@ -88,25 +88,20 @@ for (let h = 0; h < qtdeRodadas; h++) {
   }
 
   console.log();
+  console.log(`\nPlacar da Rodada ${h + 1}:`);
+  for (let i in placar) {
+    console.log(`${placar[i].nome}:  ${placar[i].numero}`);
+  }
 
   if (cont > 1) {
-    console.log(
-      `Rodada ${h + 1}, ${cont} vencedores que tiraram ${placar[0].numero}: `
-    );
+    console.log(`\nTemos ${cont} vencedores que tiraram ${placar[0].numero}: `);
     for (let i = 0; i < cont; i++) {
       console.log(`${placar[i].nome}`);
     }
   } else {
     console.log(
-      `\nRodada ${h + 1}, ${cont} vencedor que tirou ${placar[0].numero}:\n${
-        placar[0].nome
-      }`
+      `\nTemos ${cont} vencedor que tirou ${placar[0].numero}:\n${placar[0].nome}`
     );
-  }
-
-  console.log(`\nPlacar da Rodada ${h + 1}:`);
-  for (let i in placar) {
-    console.log(`${placar[i].nome}:  ${placar[i].numero}`);
   }
 
   if (h + 1 < qtdeRodadas) {
@@ -136,17 +131,19 @@ for (let i = 0; i < vencedores.length; i++) {
   }
 }
 
-console.log(`\n\nPlacar Geral:`);
+console.log(`\n\n#############################`);
+console.log(`####### Placar Geral ########`);
+console.log(`#############################`);
 for (let i in vencedores) {
   console.log(`${vencedores[i].vencedor}:  ${vencedores[i].vitorias} vitórias`);
 }
 
 console.log();
 if (cont > 1) {
-  console.log(`Temos ${cont} Grandes Campeões: `);
+  console.log(`Temos ${cont} Grandes Campeões!!! `);
   for (let i = 0; i < cont; i++) {
     console.log(`${vencedores[i].vencedor}`);
   }
 } else {
-  console.log(`O grande Campeão é ${vencedores[0].vencedor}`);
+  console.log(`O grande Campeão é ${vencedores[0].vencedor}!!!`);
 }
