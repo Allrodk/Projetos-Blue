@@ -41,6 +41,18 @@ function numAleatorio(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
+// Função para ordenar objetos dentro de uma lista
+function ordena(objeto, prop) {
+  for (let i = 0; i < objeto.length; i++) {
+    for (let j = i + 1; j < objeto.length; j++) {
+      if (Object.values(objeto[j])[prop] > Object.values(objeto[i])[prop]) {
+        objeto.splice(i, 0, objeto[j]);
+        objeto.splice(j + 1, 1);
+      }
+    }
+  }
+}
+
 for (let h = 0; h < qtdeRodadas; h++) {
   for (let i = 0; i < qtdeJogadores; i++) {
     let jogador = "Jogador" + (i + 1);
@@ -53,13 +65,7 @@ for (let h = 0; h < qtdeRodadas; h++) {
   }
 
   // Ordena os objetos da lista na rodada atual
-  placar.sort((a, b) => {
-    if (a.numero > b.numero) {
-      return -1;
-    } else {
-      return true;
-    }
-  });
+  ordena(placar, 2);
 
   // Seleciona o vencedor e adiciona na lista de vencedores
   let cont = 0;
@@ -115,13 +121,7 @@ for (let h = 0; h < qtdeRodadas; h++) {
 }
 
 // Ordena os vencedores por número de vitórias
-vencedores.sort((a, b) => {
-  if (a.vitorias > b.vitorias) {
-    return -1;
-  } else {
-    return true;
-  }
-});
+ordena(vencedores, 1);
 
 // Verifica se existe empate entre os vencedores
 cont = 0;
@@ -135,7 +135,9 @@ console.log(`\n\n#############################`);
 console.log(`####### Placar Geral ########`);
 console.log(`#############################`);
 for (let i in vencedores) {
-  console.log(`${vencedores[i].vencedor}:  ${vencedores[i].vitorias} vitórias`);
+  console.log(
+    `${vencedores[i].vencedor}:  ${vencedores[i].vitorias} vitória(s)`
+  );
 }
 
 console.log();
