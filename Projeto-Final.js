@@ -161,7 +161,6 @@ while (reiniciar == true) {
     } else {
       console.log(`${thomas.escapar()}.\n`);
 
-      //console.clear();
       // Pergunta 4: seguir o coelho branco?
       resposta = geraPergunta(pergunta.coelho);
       console.clear();
@@ -173,7 +172,6 @@ while (reiniciar == true) {
     }
   }
 
-  //console.clear();
   // Pergunta para reiniciar o jogo
   repeticao = prompt(
     "\nO dia acabou, deseja voltar no tempo e reiniciar o dia [S/N]?"
