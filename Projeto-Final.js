@@ -14,14 +14,6 @@ class Personagem {
   }
 }
 
-class Agente extends Personagem {
-  constructor(nome, funcao, versao) {
-    super(nome);
-    this.funcao = funcao;
-    this.versao = versao;
-  }
-}
-
 class Humano extends Personagem {
   constructor(nome, idade, profissao) {
     super(nome);
@@ -165,9 +157,9 @@ while (reiniciar == true) {
   if (resposta2 == "S") {
     const chance = Math.floor(Math.random() * 3);
     if (chance == 0) {
-      console.log(`${thomas.morrer()}. ${thomas.nome} está morto.`);
+      console.log(`${thomas.morrer()}. ${thomas.nome} está morto.\n`);
     } else {
-      console.log(`${thomas.escapar()}.`);
+      console.log(`${thomas.escapar()}.\n`);
 
       //console.clear();
       // Pergunta 4: seguir o coelho branco?
@@ -184,7 +176,7 @@ while (reiniciar == true) {
   //console.clear();
   // Pergunta para reiniciar o jogo
   repeticao = prompt(
-    "O dia acabou, deseja voltar no tempo e reiniciar o dia [S/N]?"
+    "\nO dia acabou, deseja voltar no tempo e reiniciar o dia [S/N]?"
   ).toUpperCase();
   console.clear();
   if (repeticao == "N") {
