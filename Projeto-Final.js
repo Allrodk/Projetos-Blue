@@ -14,6 +14,14 @@ class Personagem {
   }
 }
 
+class Agente extends Personagem {
+  constructor(nome, funcao, versao) {
+    super(nome);
+    this.funcao = funcao;
+    this.versao = versao;
+  }
+}
+
 class Humano extends Personagem {
   constructor(nome, idade, profissao) {
     super(nome);
@@ -157,9 +165,9 @@ while (reiniciar == true) {
   if (resposta2 == "S") {
     const chance = Math.floor(Math.random() * 3);
     if (chance == 0) {
-      console.log(`${thomas.morrer()}. ${thomas.nome} está morto.\n`);
+      console.log(`${thomas.morrer()}. ${thomas.nome} está morto.`);
     } else {
-      console.log(`${thomas.escapar()}.\n`);
+      console.log(`${thomas.escapar()}.`);
 
       // Pergunta 4: seguir o coelho branco?
       resposta = geraPergunta(pergunta.coelho);
