@@ -9,7 +9,7 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
 class Personagem {
-  constructor(nome, idade, profissao) {
+  constructor(nome) {
     this.nome = nome;
   }
 }
