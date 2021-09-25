@@ -6,7 +6,7 @@
 
 body {
   margin: 0px;
-  background-color: black;
+  background-color: lightblue;
   background-image: url("../image/emojis.png");
 }
 
@@ -15,7 +15,7 @@ header {
   border-radius: 10px;
   color: lightyellow;
   background-color: darkslateblue;
-  border: 3px solid black;
+  border: 3px solid gray;
   text-align: center;
 }
 
@@ -25,7 +25,7 @@ header {
   border-radius: 10px;
   color: darkslateblue;
   background-color: lightyellow;
-  border: 3px solid black;
+  border: 3px solid gray;
   text-align: center;
   width: 280px;
 }
@@ -42,7 +42,7 @@ button {
   border-radius: 10px;
   color: darkslateblue;
   background-color: white;
-  border: 3px solid black;
+  border: 3px solid gray;
   background-color: lightyellow;
   font-size: 18px;
   font-weight: bold;
